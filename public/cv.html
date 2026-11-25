@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Louis Bochereau</title>
+  <style>
+    :root {
+      --primary-color: #000000;
+      --accent-color: #333333;
+      --text-main: #1a1a1a;
+      --text-muted: #555555;
+      --bg-sidebar: #f5f5f5;
+      --bg-main: #ffffff;
+      --border-color: #dddddd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 13px;
+      /* Taille augmentée pour remplir l'espace vide */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background-color: #e5e5e5;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .cv-container {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      background: var(--bg-main);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* Colonne latérale */
+    .sidebar {
+      background-color: var(--bg-sidebar);
+      padding: 32px 24px;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .profile-photo {
+      max-width: 130px;
+      height: auto;
+      display: block;
+      margin: 0 auto 16px auto;
+      border-radius: 8px;
+      border: 3px solid var(--border-color);
+    }
+
+    .sidebar section {
+      margin-bottom: 24px;
+    }
+
+    .sidebar h2 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-color);
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 4px;
+    }
+
+    .contact-item {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .contact-item a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .skill-category {
+      margin-bottom: 12px;
+    }
+
+    .skill-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 2px;
+    }
+
+    .skill-tags {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .list-sidebar {
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .list-sidebar li {
+      margin-bottom: 6px;
+    }
+
+    /* Colonne principale */
+    .main-content {
+      padding: 32px 32px;
+    }
+
+    .madein {
+      font-size: 0.65rem;
+      opacity: 0.4;
+      text-align: right;
+      margin-top: 16px;
+    }
+
+    header {
+      margin-bottom: 16px;
+    }
+
+    .name {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--primary-color);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .role-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-top: 6px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .objective {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+    }
+
+    .summary {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .main-section {
+      margin-bottom: 18px;
+    }
+
+    .main-section h2 {
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .item {
+      margin-bottom: 12px;
+      padding: 12px 16px;
+      background-color: var(--bg-sidebar);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      gap: 16px;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+
+    .item-subtitle {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .item-date {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .item-bullets {
+      padding-left: 24px;
+      font-size: 0.85rem;
+    }
+
+    .item-bullets li {
+      margin-bottom: 2px;
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 0 !important;
+      }
+
+      html,
+      body {
+        width: 210mm !important;
+        height: 297mm !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: var(--bg-main) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .cv-container {
+        box-shadow: none !important;
+        width: 210mm !important;
+        height: 297mm !important;
+        min-height: 297mm !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="cv-container">
+    <!-- Barre latérale -->
+    <aside class="sidebar">
+      <img src="photo.png" alt="Photo de profil" class="profile-photo">
+      <section>
+        <h2>Informations</h2>
+        <div class="contact-item">21 ans - Français</div>
+        <div class="contact-item">Toulouse, France</div>
+        <div class="contact-item"><a href="mailto:louis.bochereau@etu.iut-tlse3.fr">louis.bochereau@etu.iut-tlse3.fr</a>
+        </div>
+        <div class="contact-item"><a href="tel:0641942261">06 41 94 22 61</a></div>
+        <div class="contact-item"><a href="https://github.com/Meduse-arch" target="_blank"
+            rel="noopener noreferrer">github.com/Meduse-arch</a></div>
+      </section>
+
+      <section>
+        <h2>Langues</h2>
+        <ul class="list-sidebar">
+          <li><strong>Français :</strong> Langue maternelle</li>
+          <li><strong>Anglais :</strong> A2</li>
+          <li><strong>Espagnol :</strong> A2</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Compétences</h2>
+        <div class="skill-category">
+          <div class="skill-title">Langages</div>
+          <div class="skill-tags">TypeScript, JavaScript, Java, Python, PHP, Rust, C, HTML5, CSS3, Shell (Bash)</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-title">Bases de données</div>
+          <div class="skill-tags">PostgreSQL, SQLite, SQL, JSON</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-title">Frameworks & Libs</div>
+          <div class="skill-tags">React, Tailwind CSS, PixiJS, PearJS</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-title">Systèmes & Outils</div>
+          <div class="skill-tags">Linux, Windows, Git</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Savoir-être</h2>
+        <ul class="list-sidebar">
+          <li>Travail en équipe</li>
+          <li>Autonomie</li>
+          <li>Rigueur</li>
+          <li>Résolution de problèmes</li>
+          <li>Curiosité technique</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Centres d’intérêt</h2>
+        <ul class="list-sidebar">
+          <li>Jeux de rôle</li>
+          <li>Informatique</li>
+          <li>Lecture</li>
+        </ul>
+        <p class="madein">made in html</p>
+      </section>
+    </aside>
+
+    <!-- Colonne principale -->
+    <main class="main-content">
+      <header>
+        <h1 class="name">Louis Bochereau</h1>
+        <div class="role-title"> 2ᵉ année BUT</div>
+        <div class="objective">Stage : Développeur React</div>
+      </header>
+
+      <section class="main-section">
+        <h2>Formations</h2>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">BUT Informatique (2ᵉ année)</span>
+            <span class="item-date">2024 — Présent</span>
+          </div>
+          <div class="item-subtitle">IUT Rangueil, Université de Toulouse | Toulouse, France</div>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Baccalauréat Général</span>
+            <span class="item-date">2020 — 2023</span>
+          </div>
+          <div class="item-subtitle">Lycée Martin Malvy | Cazères-sur-Garonne, France</div>
+          <ul class="item-bullets">
+            <li>Spécialités : Numérique et Sciences Informatiques (NSI), Mathématiques, Sciences Économiques et Sociales
+              (SES).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="main-section">
+        <h2>Expériences & Projets</h2>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Développeur Web & Backend — Nom du projet : Signet</span>
+            <span class="item-date">Janvier 2026 — 14 Juillet 2026</span>
+          </div>
+          <div class="item-subtitle">Projet personnel | Toulouse</div>
+          <div class="item-subtitle" style="margin-bottom: 4px;"><a href="https://signet-vtt.vercel.app/"
+              target="_blank" rel="noopener noreferrer"
+              style="color: var(--accent-color);">https://signet-vtt.vercel.app/</a></div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+            Signet est un Virtual Table Top (VTT), une application servant à faire du jeu de rôle en ligne.
+          </p>
+          <ul class="item-bullets">
+            <li>Concevoir les wireframes et l'architecture générale de l'application.</li>
+            <li>Développer l'interface avec React et Tailwind CSS, et la table de jeu interactive via PixiJS.</li>
+            <li>Développer le backend (TypeScript, SQLite, PostgreSQL) et concevoir le schéma relationnel.</li>
+            <li>Mettre en place l'infrastructure réseau et sécuriser les transferts de données.</li>
+            <li>Mettre en place un réseau P2P via PearJS pour connecter les joueurs entre eux.</li>
+            <li>Mettre en place la sécurité du serveur afin de protéger l'hôte de la partie.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Développement Java</span>
+            <span class="item-date">2026 (1 mois)</span>
+          </div>
+          <div class="item-subtitle">Projet académique en équipe de 4 | IUT Rangueil, Université de Toulouse</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+            Application de vente de fromages.
+          </p>
+          <ul class="item-bullets">
+            <li>Développer l'application complète en Java.</li>
+            <li>Collaborer avec l'équipe de conception pour la création des interfaces utilisateur (UI).</li>
+            <li>Mettre en place des tests automatisés pour fiabiliser et garantir la qualité du code.</li>
+            <li>Résoudre les bugs et optimiser les fonctionnalités.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Infrastructure Cloud & Réseau</span>
+            <span class="item-date">2026 (1 mois)</span>
+          </div>
+          <div class="item-subtitle">Projet académique en équipe de 4 | IUT Rangueil, Université de Toulouse</div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+            Déploiement d'un service de cloud.
+          </p>
+          <ul class="item-bullets">
+            <li>Administrer les infrastructures réseau et les serveurs sous Linux.</li>
+            <li>Implémenter des solutions de sécurité et contrôler les accès.</li>
+            <li>Suivre les performances système et résoudre les incidents techniques.</li>
+            <li>Contribuer à la planification et au déploiement de l'infrastructure.</li>
+          </ul>
+        </div>
+      </section>
+
+
+    </main>
+  </div>
+
+</body>
+
+</html>
