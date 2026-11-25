@@ -217,10 +217,10 @@ export const PROJECTS: ProjectItem[] = [
     visualType: 'jdr-assistance',
   },
   {
-    id: 'Meduse-arch.github.io',
+    id: 'ancien-portfolio',
     index: '05',
-    title: 'Meduse-arch.github.io',
-    repoName: 'Meduse-arch.github.io',
+    title: 'ancien-portfolio',
+    repoName: 'ancien-portfolio',
     category: {
       fr: 'Dépôt Git · Ancien Portfolio',
       en: 'Git Repo · Previous Portfolio',
@@ -247,7 +247,7 @@ export const PROJECTS: ProjectItem[] = [
       ],
     },
     stack: ['JavaScript', 'HTML5', 'CSS3', 'GitHub Pages'],
-    repoUrl: 'https://github.com/Meduse-arch/Meduse-arch.github.io',
+    repoUrl: 'https://github.com/Meduse-arch/ancien-portfolio',
     visualType: 'discord-portfolio',
   },
   {
